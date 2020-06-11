@@ -18,7 +18,7 @@ public class Payments {
     @Column(nullable = false)
     private String type;
 
-    @ManyToMany(mappedBy = "payments")
+    @ManyToMany(mappedBy = "payments", cascade = CascadeType.ALL)
     @JsonIgnoreProperties("payments")
     List<Orders> orders = new ArrayList<>();
 

@@ -25,7 +25,7 @@ public class Orders {
     @JsonIgnoreProperties("orders")
     private Customers customer;
 
-    @ManyToMany()
+    @ManyToMany
     @JoinTable(name = "orderspayments", joinColumns = @JoinColumn(name = "ordnum"), inverseJoinColumns = @JoinColumn(name = "paymentid"))
     @JsonIgnoreProperties("orders")
     List<Payments> payments = new ArrayList<>();
@@ -88,6 +88,8 @@ public class Orders {
     public void setPayments(List<Payments> payments) {
         this.payments = payments;
     }
+
+
 
     @Override
     public String toString() {

@@ -22,4 +22,10 @@ public interface CustomersService {
 
     List<Orders> findOrdersWithAdvanceAmount();
 
+    void delete(long id);
+
+    Customers save(Customers customer);
+
+    Customers update(Customers customer, long id);
+
 }

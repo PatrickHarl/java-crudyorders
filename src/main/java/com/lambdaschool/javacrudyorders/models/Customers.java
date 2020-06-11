@@ -39,6 +39,20 @@ public class Customers {
     @JsonIgnoreProperties("customer")
     private List<Orders> orders = new ArrayList<>();
 
+    @Transient
+    public boolean hasvalueforopenamt = false;
+
+    @Transient
+    public boolean hasvalueforrecamt = false;
+
+    @Transient
+    public boolean hasvalueforpayamt = false;
+
+    @Transient
+    public boolean hasvalueforoutamt = false;
+
+
+
     public Customers() {
 
     }
@@ -113,14 +127,19 @@ public class Customers {
     }
 
     public void setOpeningamt(double openingamt) {
+
+        hasvalueforopenamt = true;
         this.openingamt = openingamt;
     }
 
     public double getReceiveamt() {
+
         return receiveamt;
     }
 
     public void setReceiveamt(double receiveamt) {
+
+        hasvalueforrecamt = true;
         this.receiveamt = receiveamt;
     }
 
@@ -129,6 +148,8 @@ public class Customers {
     }
 
     public void setPaymentamt(double paymentamt) {
+
+        hasvalueforpayamt = true;
         this.paymentamt = paymentamt;
     }
 
@@ -137,6 +158,8 @@ public class Customers {
     }
 
     public void setOutstandingamt(double outstandingamt) {
+
+        hasvalueforoutamt = true;
         this.outstandingamt = outstandingamt;
     }
 
